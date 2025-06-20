@@ -15,8 +15,8 @@ import {
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Fitverse from "../assets/Fitverse.png";
-import ims from "../assets/Ims.png";
-import taskpilot from "../assets/Taskpilot.jpg";
+import Ims from "../assets/Ims.png";
+import Taskpilot from "../assets/Taskpilot.jpg";
 
 const getTechIcon = (tech) => {
   const iconSize = 16;
@@ -40,7 +40,7 @@ const Projects = () => {
       title: "Inventory Management System",
       description:
         "A full-featured inventory solution with role-based authentication, stock control, and order tracking. Built with React, Tailwind, and Appwrite.",
-      image: ims,
+      image: Ims,
       tech: ["React.js", "Tailwind CSS", "Appwrite"],
       liveUrl: "https://inventory-management-systems.vercel.app/",
       caseStudyUrl: "/case-studies/inventory-management",
@@ -60,7 +60,7 @@ const Projects = () => {
       title: "Task Pilot – Task Management Tool",
       description:
         "A modern productivity app for managing daily tasks, deadlines, and progress tracking. MERN stack powered with clean UX.",
-      image: taskpilot,
+      image: Taskpilot,
       tech: ["React.js", "Node.js", "Express", "MongoDB"],
       liveUrl: "https://task-pilot-demo.vercel.app",
       caseStudyUrl: "/case-studies/task-pilot",
