@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Fitverse from "../assets/fitverse.png";
-import ims from "../assets/ims.png";
-import taskpilot from "../assets/taskpilot.jpg";
+import Fitverse from "../assets/Fitverse.png";
+import ims from "../assets/Ims.png";
+import taskpilot from "../assets/Taskpilot.jpg";
 
 const getTechIcon = (tech) => {
   const iconSize = 16;

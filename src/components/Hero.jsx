@@ -1,6 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
 import { useEffect } from "react";
-import hero from "../assets/hero.jpg"; // Robot image
+import hero from "../assets/Hero.jpg"; // Robot image
 
 const Hero = () => {
   const scrollToContact = () => {
