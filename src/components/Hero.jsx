@@ -1,6 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
 import { useEffect } from "react";
-import hero from "../assets/hero.jpg"; // Robot image
+import Hero from "../assets/Heroimg.jpg"; // Robot image
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -82,7 +82,7 @@ const Hero = () => {
         {/* Robot + Speech Bubble */}
         <div className="relative w-full flex justify-center md:justify-end items-center mt-10 md:mt-0">
           <img
-            src={hero}
+            src={Hero}
             alt="Robot Illustration"
             className="w-[260px] sm:w-[320px] md:w-[380px] h-auto animate-bounce-slow"
           />
