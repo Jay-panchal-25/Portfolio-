@@ -86,11 +86,11 @@ const Projects = () => {
         </div>
 
         {/* Project Cards */}
-        <div className="space-y-20 sm:space-y-24">
+        <div className="space-y-20 sm:space-y-24 ">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className={`flex flex-col-reverse lg:flex-row ${
+              className={`flex   flex-col-reverse lg:flex-row ${
                 index % 2 !== 0 ? "lg:flex-row-reverse" : ""
               } items-center gap-10 sm:gap-12 group`}
               initial={{ opacity: 0, y: 50 }}
@@ -149,7 +149,7 @@ const Projects = () => {
 
               {/* Image */}
               <div className="w-full lg:w-1/2">
-                <div className="relative w-full aspect-[16/9] bg-white rounded-lg shadow-lg overflow-hidden group-hover:shadow-xl transition duration-500">
+                <div className="relative w-full aspect-[16/9] bg-white rounded-lg shadow-2xl overflow-hidden group-hover:shadow-xl transition duration-500">
                   <img
                     src={project.image}
                     alt={project.title}

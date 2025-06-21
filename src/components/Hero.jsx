@@ -90,7 +90,7 @@ const Hero = () => {
           {/* Speech Bubble */}
           <div className="absolute top-2 right-4 sm:top-4 sm:right-8 md:top-[-40px] md:right-[10px] bg-white border border-gray-300 rounded-xl p-3 shadow-md max-w-[220px] text-xs sm:text-sm text-gray-800 leading-snug animate-fade-in z-10">
             “Design meets logic. Let’s build something great!”
-            <div className="absolute -bottom-2 left-6 w-4 h-4 bg-white border-l border-b border-gray-300 rotate-45" />
+            <div className="absolute -bottom-2 left-6 w-4 h-4 bg-white border-r border-b border-gray-300 rotate-45" />
           </div>
         </div>
       </div>
