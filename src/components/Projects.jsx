@@ -90,9 +90,9 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className={`flex   flex-col-reverse lg:flex-row ${
+              className={`flex flex-col-reverse lg:flex-row ${
                 index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-              } items-center gap-10 sm:gap-12 group`}
+              } items-center gap-10 sm:gap-12 group shadow-md lg:shadow-none rounded-xl p-4`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
