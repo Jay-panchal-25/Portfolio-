@@ -6,6 +6,7 @@ import {
   Linkedin,
   Twitter,
   Instagram,
+  MessageCircle,
 } from "lucide-react";
 
 const Contact = () => {
@@ -24,6 +25,11 @@ const Contact = () => {
       icon: <Instagram size={18} />,
       label: "Instagram",
       href: "https://www.instagram.com/_jay_panchal_007",
+    },
+    {
+      icon: <MessageCircle size={18} />,
+      label: "whatsapp",
+      href: "https://wa.me/919313944698",
     },
   ];
 
