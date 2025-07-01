@@ -6,8 +6,8 @@ import {
   Linkedin,
   Twitter,
   Instagram,
-  MessageCircle,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const Contact = () => {
   const socialLinks = [
@@ -25,11 +25,6 @@ const Contact = () => {
       icon: <Instagram size={18} />,
       label: "Instagram",
       href: "https://www.instagram.com/_jay_panchal_007",
-    },
-    {
-      icon: <MessageCircle size={18} />,
-      label: "whatsapp",
-      href: "https://wa.me/919313944698",
     },
   ];
 
@@ -91,8 +86,15 @@ const Contact = () => {
               className="flex items-center justify-between px-6 py-4 border border-black rounded-xl hover:bg-black hover:text-white transition-colors"
             >
               <div className="flex items-center gap-3">
-                <Phone />
-                <span className="text-sm sm:text-lg">+91 9313944698</span>
+                <FaWhatsapp className="text-3xl" />
+
+                <a
+                  href="https://wa.me/919313944698?text=Hey%20there%21%20Saw%20your%20work%20and%20loved%20it%20%E2%80%94%20let%E2%80%99s%20explore%20how%20we%20can%20create%20something%20awesome%20together."
+                  target="_blank"
+                  className="text-sm sm:text-lg"
+                >
+                  Contact Me on WhatsApp
+                </a>
               </div>
               <span className="text-xs sm:text-sm text-gray-500">Phone</span>
             </a>
