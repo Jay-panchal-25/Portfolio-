@@ -11,12 +11,15 @@ import {
   Send,
   Database,
   Globe,
+  BadgeCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Fitverse from "../assets/Fitverse.png";
 import Ims from "../assets/Ims.png";
 import Taskpilot from "../assets/Taskpilot.jpg";
+import HRMS from "../assets/HRMS.png";
+import Consulting from "../assets/Consulting.png";
 
 const getTechIcon = (tech) => {
   const iconSize = 16;
@@ -55,113 +58,180 @@ const Projects = () => {
       liveUrl: "https://its-fitverse.vercel.app/",
       caseStudyUrl: "/case-studies/fitverse",
     },
+  ];
+
+  const otherProjects = [
     {
-      id: 3,
-      title: "Task Pilot – Task Management Tool",
+      id: 1,
+      title: "TaskPilot",
+      image: Taskpilot,
       description:
         "A modern productivity app for managing daily tasks, deadlines, and progress tracking. MERN stack powered with clean UX.",
-      image: Taskpilot,
       tech: ["React.js", "Node.js", "Express", "MongoDB"],
-      liveUrl: "https://task-pilot-demo.vercel.app",
-      caseStudyUrl: "/case-studies/task-pilot",
+    },
+    {
+      id: 2,
+      title: "HRMS",
+      image: HRMS,
+      description:
+        "A role-based HR management platform for managing employee profiles, leave requests, and payroll. Includes an intuitive admin dashboard.",
+      tech: ["React.js", "Node.js", "Express", "MongoDB"],
+    },
+    {
+      id: 3,
+      title: "Consulting App",
+      image: Consulting,
+      description:
+        "A tech consulting platform designed for IT firms to manage client portfolios, schedule sessions, and automate service workflows.",
+      tech: ["React.js ", "Tailwind CSS", "Farmer Motion"],
     },
   ];
 
   return (
-    <section id="projects" className="py-24 sm:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20">
+    <>
+      {/* Work & Case Study Section */}
+      <section id="projects" className="py-24 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 sm:mb-20">
+            <h2
+              className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900"
+              style={{ fontFamily: '"Irish Grover", cursive' }}
+            >
+              Work & Case Study
+            </h2>
+            <div className="w-24 h-1 bg-black mx-auto mt-4" />
+            <p className="mt-4 text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
+              Real-world projects crafted with clean code, smart architecture,
+              and a designer's touch.
+            </p>
+          </div>
+
+          <div className="space-y-20 sm:space-y-24">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                className={`flex flex-col-reverse lg:flex-row ${
+                  index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                } items-center gap-10 sm:gap-12 group shadow-md lg:shadow-none rounded-xl p-4`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-full lg:w-1/2 space-y-5">
+                  <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center gap-2">
+                    <LibraryBig className="text-indigo-600" size={28} />
+                    {project.title}
+                  </h3>
+
+                  <p className="text-gray-700 text-sm sm:text-base">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-3 mb-1 flex items-center gap-2 text-gray-800 font-medium">
+                    <Code size={18} className="text-purple-600" />
+                    Built With:
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="inline-flex items-center gap-1 px-3 py-1 text-sm border border-gray-300 bg-gray-100 text-gray-800 rounded-full hover:shadow transition"
+                      >
+                        {getTechIcon(tech)}
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm px-4 py-2 border border-gray-300 text-black hover:bg-gray-100 hover:shadow transition rounded"
+                    >
+                      <ExternalLink size={16} />
+                      Live Site
+                    </a>
+
+                    <Link
+                      to={project.caseStudyUrl}
+                      className="inline-flex items-center gap-2 text-sm px-4 py-2 bg-black text-white hover:bg-gray-800 hover:shadow-lg transition rounded"
+                    >
+                      <Star size={16} />
+                      Read Case Study
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="w-full lg:w-1/2">
+                  <div className="relative w-full aspect-[16/9] bg-white rounded-lg shadow-2xl overflow-hidden group-hover:shadow-xl transition duration-500">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-contain rounded-lg transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
           <h2
-            className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900"
+            className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12"
             style={{ fontFamily: '"Irish Grover", cursive' }}
           >
-            Work & Case Study
+            Other Projects
           </h2>
-          <div className="w-24 h-1 bg-black mx-auto mt-4" />
-          <p className="mt-4 text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
-            Real-world projects crafted with clean code, smart architecture, and
-            a designer's touch.
-          </p>
-        </div>
 
-        {/* Project Cards */}
-        <div className="space-y-20 sm:space-y-24 ">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className={`flex flex-col-reverse lg:flex-row ${
-                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-              } items-center gap-10 sm:gap-12 group shadow-md lg:shadow-none rounded-xl p-4`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              {/* Text Content */}
-              <div className="w-full lg:w-1/2 space-y-5">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 flex items-center gap-2">
-                  <LibraryBig className="text-indigo-600" size={28} />
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-700 text-sm sm:text-base">
-                  {project.description}
-                </p>
-
-                <div className="mt-3 mb-1 flex items-center gap-2 text-gray-800 font-medium">
-                  <Code size={18} className="text-purple-600" />
-                  Built With:
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-1 px-3 py-1 text-sm border border-gray-300 bg-gray-100 text-gray-800 rounded-full hover:shadow transition"
-                    >
-                      {getTechIcon(tech)}
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm px-4 py-2 border border-gray-300 text-black hover:bg-gray-100 hover:shadow transition rounded"
-                  >
-                    <ExternalLink size={16} />
-                    Live Site
-                  </a>
-
-                  <Link
-                    to={project.caseStudyUrl}
-                    className="inline-flex items-center gap-2 text-sm px-4 py-2 bg-black text-white hover:bg-gray-800 hover:shadow-lg transition rounded"
-                  >
-                    <Star size={16} />
-                    Read Case Study
-                  </Link>
-                </div>
-              </div>
-
-              {/* Image */}
-              <div className="w-full lg:w-1/2">
-                <div className="relative w-full aspect-[16/9] bg-white rounded-lg shadow-2xl overflow-hidden group-hover:shadow-xl transition duration-500">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {otherProjects.map((proj, index) => (
+              <motion.div
+                key={proj.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                viewport={{ once: true }}
+                className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="overflow-hidden">
                   <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-contain rounded-lg transform group-hover:scale-105 transition-transform duration-700"
+                    src={proj.image}
+                    alt={proj.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2 mb-2">
+                    <BadgeCheck className="text-green-600" size={18} />
+                    {proj.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                    {proj.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {proj.tech.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2 py-1 text-xs bg-gray-100 text-gray-800 rounded-full border border-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

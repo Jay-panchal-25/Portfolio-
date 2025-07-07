@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 import { useEffect } from "react";
 import Robo from "../assets/Robo.jpg"; // Robot image
 
@@ -66,12 +66,13 @@ const Hero = () => {
                 className="group-hover:translate-x-1 transition-transform duration-300"
               />
             </button>
+
             <button
               onClick={scrollToProjects}
               className="group border border-black text-black px-6 py-3 rounded font-medium hover:bg-black hover:text-white transition-all duration-300 flex items-center gap-2 text-sm tracking-wide justify-center shadow-sm"
             >
               SEE MY WORK
-              <Download
+              <ArrowDown
                 size={16}
                 className="group-hover:scale-110 transition-transform duration-300"
               />
