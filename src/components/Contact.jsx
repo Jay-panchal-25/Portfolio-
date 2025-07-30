@@ -1,152 +1,90 @@
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  Linkedin,
-  Twitter,
-  Instagram,
-} from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin } from "lucide-react";
+import telephone from "../assets/telephone.png";
+import Map from "../assets/Map.png";
 
-const Contact = () => {
-  const socialLinks = [
-    {
-      icon: <Github size={18} />,
-      label: "GitHub",
-      href: "https://github.com/Jay-panchal-25",
-    },
-    {
-      icon: <Linkedin size={18} />,
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/jay-panchal-791451336",
-    },
-    {
-      icon: <Instagram size={18} />,
-      label: "Instagram",
-      href: "https://www.instagram.com/_jay_panchal_007",
-    },
-  ];
-
+export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="w-full py-24 px-4 bg-white border-t border-black"
-    >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Left: Text & CTA */}
-        <div className="space-y-6">
-          <h2
-            className="text-4xl sm:text-5xl font-bold text-black"
-            style={{ fontFamily: '"Irish Grover", cursive' }}
+    <>
+      <img
+        src={Map}
+        alt="phone"
+        className=" absolute w-1/2 top-0 left-18  opacity-30"
+      />
+      {/* Phone Image */}
+      <img
+        src={telephone}
+        alt="phone"
+        className=" absolute w-128 mx-auto right-0 bottom-0 mt-6 opacity-20"
+      />
+      <div
+        className=" px-10 md:px-20 py-40
+        text-[#1a1a1a] font-serif"
+      >
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          {/* Left Text Section */}
+
+          <motion.div
+            className="max-w-xl"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            Let’s Make Something Great
-          </h2>
-          <p className="text-gray-700 text-base sm:text-lg max-w-md">
-            Interested in working together or just want to connect? Shoot me a
-            message, and I’ll get back to you as soon as I can.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-4 flex-wrap">
-            <a
-              href="mailto:jaypanchal06334@gmail.com"
-              className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-900 transition-all text-center"
-            >
-              Email Me
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jay-panchal-791451336"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white transition-all text-center"
-            >
-              Connect on LinkedIn
-            </a>
-          </div>
-        </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Let’s Make <br />
+              Something Great
+            </h1>
+            <p className="text-gray-700 mb-6">
+              Interested in working together or just want to connect? Shoot me a
+              message, and I’ll get back to you as soon as I can.
+            </p>
 
-        {/* Right: Info Cards */}
-        <div className="space-y-6">
-          {/* Info Boxes */}
-          <div className="space-y-4">
-            <a
-              href="mailto:jaypanchal06334@gmail.com"
-              className="flex items-center justify-between px-6 py-4 border border-black rounded-xl hover:bg-black hover:text-white transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <Mail />
-                <span className="text-sm sm:text-lg">Email Anytime</span>
-              </div>
-              <span className="text-xs sm:text-sm text-gray-500">Email</span>
-            </a>
-
-            <a
-              href="tel:+919313944698"
-              className="flex items-center justify-between px-6 py-4 border border-black rounded-xl hover:bg-black hover:text-white transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <FaWhatsapp className="text-3xl" />
-
-                <a
-                  href="https://wa.me/919313944698?text=Hey%20there%21%20Saw%20your%20work%20and%20loved%20it%20%E2%80%94%20let%E2%80%99s%20explore%20how%20we%20can%20create%20something%20awesome%20together."
-                  target="_blank"
-                  className="text-sm sm:text-lg"
-                >
-                  Contact Me on WhatsApp
-                </a>
-              </div>
-              <span className="text-xs sm:text-sm text-gray-500">Phone</span>
-            </a>
-
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between px-6 py-4 border border-black rounded-xl hover:bg-black hover:text-white transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <MapPin />
-                <span className="text-sm sm:text-lg">Kalol, Gujarat</span>
-              </div>
-              <span className="text-xs sm:text-sm text-gray-500">Location</span>
-            </a>
-          </div>
-
-          {/* Social Icons */}
-          <div className="mt-8">
-            <h4 className="text-base sm:text-lg font-semibold mb-4 text-black">
-              Follow Me
-            </h4>
-            <div className="flex flex-wrap gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 border border-black rounded-full hover:bg-black hover:text-white transition-colors"
-                  aria-label={social.label}
-                >
-                  {social.icon}
-                </a>
-              ))}
+            <div className="flex gap-4 mb-6 flex-wrap">
+              <button className="bg-black text-white px-5 py-2 rounded-full hover:scale-105 transition">
+                Email Me
+              </button>
+              <button className="border border-black px-5 py-2 rounded-full hover:bg-black hover:text-white transition">
+                Connect on LinkedIn
+              </button>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Right Info Boxes and Image */}
+          <motion.div
+            className="flex flex-col gap-4 w-full max-w-md"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Email Box */}
+            <div className="flex items-center justify-between border rounded-xl px-5 py-4 hover:shadow-md transition">
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5" />
+                <span>Email Anytime</span>
+              </div>
+              <span className="text-gray-500">Email</span>
+            </div>
+
+            {/* WhatsApp Box */}
+            <div className="flex items-center justify-between border rounded-xl px-5 py-4 hover:shadow-md transition">
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5" />
+                <span>Contact Me on WhatsApp</span>
+              </div>
+              <span className="text-gray-500">Phone</span>
+            </div>
+
+            {/* Location Box */}
+            <div className="flex items-center justify-between border rounded-xl px-5 py-4 hover:shadow-md transition">
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5" />
+                <span>Kalol, Gujarat</span>
+              </div>
+              <span className="text-gray-500">Location</span>
+            </div>
+          </motion.div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="mt-24 border-t border-black bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-10 text-center">
-          <p className="text-lg sm:text-xl font-semibold text-black mb-2 tracking-tight">
-            Building clean code with bold ideas.
-          </p>
-          <p className="text-gray-600 text-xs sm:text-sm">
-            © {new Date().getFullYear()} Jay Panchal — All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </section>
+    </>
   );
-};
-
-export default Contact;
+}
