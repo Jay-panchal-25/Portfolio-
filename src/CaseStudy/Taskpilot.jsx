@@ -25,17 +25,14 @@ const TaskPilotCaseStudy = () => {
     <section className="min-h-screen bg-white text-black pt-10 pb-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <Link
-          to="/"
+          to="/work"
           className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-black transition mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
         </Link>
 
-        <h1
-          className="text-5xl font-irish text-center text-black mb-16"
-          style={{ fontFamily: '"Irish Grover", cursive' }}
-        >
+        <h1 className="text-5xl font-irish text-center text-black mb-16">
           Task Pilot
         </h1>
 
@@ -91,7 +88,7 @@ const TaskPilotCaseStudy = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               custom={i}
-              className={`h-full p-6 bg-white rounded-2xl border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition duration-300 ease-in-out ${span}`}
+              className={`h-full p-6 bg-white rounded-2xl border-2 border-black shadow-[7px_7px_0px_rgba(0,0,0,0.9)] transition duration-300 ease-in-out ${span}`}
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-black text-white rounded-full">

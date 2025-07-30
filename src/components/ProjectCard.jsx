@@ -1,49 +1,60 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 
 const ProjectCard = ({
   title,
   description,
   image,
-  stack,
   liveLink,
-  caseStudyLink,
-  reverse,
+  stacked = false,
 }) => {
   return (
     <motion.div
-      className={`flex flex-col md:flex-row ${
-        reverse ? "md:flex-row-reverse" : ""
-      } border-2 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,_0,_0,_0.8)] overflow-hidden`}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      className={`${
+        stacked ? "flex flex-col" : `flex flex-col md:flex-row`
+      } rounded-3xl border-2 border-black shadow-[7px_7px_0px_rgba(0,0,0,0.9)] overflow-hidden bg-white`}
+      initial={{ opacity: 0, x: 70 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 2, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <img src={image} alt={title} className="md:w-1/2 w-full object-cover" />
-      <div className="p-6 space-y-4 flex-1">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-gray-700 text-sm">{description}</p>
-        <div className="flex flex-wrap gap-2">
-          {stack.map((item) => (
-            <span
-              key={item}
-              className="border border-black text-xs px-2 py-1 rounded"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-        <div className="flex gap-4 mt-4">
-          <a
-            href={liveLink}
-            className="border border-black px-4 py-1 rounded text-sm hover:bg-black hover:text-white transition"
-          >
-            Live Site
-          </a>
-          <a href={caseStudyLink} className="underline text-sm font-medium">
-            Read Case Study
-          </a>
+      {/* Image Section */}
+      <div className={`${stacked ? "" : "w-full md:w-1/2"}`}>
+        <img
+          src={image}
+          alt={title}
+          className={`w-full h-full object-cover ${
+            stacked ? "aspect-video" : "md:aspect-auto"
+          } p-6 hover:scale-105 transition-transform duration-300 `}
+        />
+      </div>
+
+      {/* Content Section */}
+      <div
+        className={`${
+          stacked ? "" : "w-full md:w-1/2"
+        } flex items-center p-6 md:p-10`}
+      >
+        <div className="w-full">
+          <h3 className="text-3xl font-bold">{title}</h3>
+          <p className="text-gray-700 pt-5 text-sm leading-relaxed">
+            {description}
+          </p>
+
+          <div className="flex gap-4 pt-5 flex-wrap">
+            {liveLink && (
+              <a
+                href={liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm border border-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition"
+              >
+                <ExternalLink size={16} />
+                Live Site
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
