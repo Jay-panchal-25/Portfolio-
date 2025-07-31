@@ -66,7 +66,7 @@ const About = () => {
       </motion.div>
 
       {/* Skills Section */}
-      <section className="text-center px-4">
+      <section className="text-center px-4 max-sm:hidden">
         <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-10 sm:mb-12">
           Skills
         </h2>

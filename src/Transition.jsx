@@ -12,7 +12,7 @@ const Transition = (OgComponent) => {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 0 }}
         exit={{ scaleX: 1 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       />
 
       {/* Your actual page */}
@@ -23,7 +23,7 @@ const Transition = (OgComponent) => {
         initial={{ scaleX: 1 }}
         animate={{ scaleX: 0 }}
         exit={{ scaleX: 0 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       />
     </>
   );

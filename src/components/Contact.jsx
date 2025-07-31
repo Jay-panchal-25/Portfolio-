@@ -65,22 +65,24 @@ function Contact() {
               <span className="text-gray-500">Email</span>
             </motion.a>
 
-            {/* WhatsApp Box */}
-            <motion.a
+            <motion.div
               initial={{ opacity: 1, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              href="+919313944698"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between border-2 rounded-xl px-5 py-4 hover:shadow-md transition border-black shadow-[5px_5px_0px_0px_rgba(0,_0,_0,_0.8)]"
             >
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5" />
-                <span>Talk on call</span>
-              </div>
-              <span className="text-gray-500">Phone</span>
-            </motion.a>
+              <a
+                href="tel:+919313944698"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between border-2 rounded-xl px-5 py-4 hover:shadow-md transition border-black shadow-[5px_5px_0px_0px_rgba(0,_0,_0,_0.8)]"
+              >
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5" />
+                  <span>Talk on call</span>
+                </div>
+                <span className="text-gray-500">Phone</span>
+              </a>
+            </motion.div>
 
             {/* Location Box */}
             <motion.a
